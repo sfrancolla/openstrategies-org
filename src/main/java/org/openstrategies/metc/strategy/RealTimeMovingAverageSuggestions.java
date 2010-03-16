@@ -14,7 +14,9 @@ import org.openstrategies.metc.strategy.util.*;
  * Does not issue trades, just trade suggestions.
  * 
  * Improvements to this simple proof-of-concept strategy and associated tools are strongly encourag-
- * ed.  Check-out, copy the class, enhance, and commit: http://github.com/sfrancolla/openstrategies
+ * ed.  Check-out, copy the class, enhance, and commit.
+ * 
+ * http://github.com/sfrancolla/openstrategies-org
  *
  * @author sfrancolla@gmail.com
  */
