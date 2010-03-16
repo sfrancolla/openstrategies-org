@@ -15,19 +15,10 @@
  ** 
  ** http://www.gnu.org/licenses/lgpl-3.0.txt
  **
- ** @author sfrancolla@gmail.com
+ ** @author SFrancolla
  **/
 package org.openstrategies.metc.strategy.base;
 
-import org.marketcetera.trade.*;
-
-/**
- * Simple factory to produce a suggestion identifier.
- */
-public class SuggestionIdentifierFactory {
-   
-   public static SuggestionIdentifier make() {
-      return new UUIDSuggestionIdentifier();
-   }
+public class test {
 
 }
