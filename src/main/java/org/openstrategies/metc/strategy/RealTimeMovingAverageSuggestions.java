@@ -64,20 +64,20 @@ public class RealTimeMovingAverageSuggestions extends OpenStrategy {
          if (currData.ma4.compareTo(currData.ma8) > 0 && !isBuy) {
             isBuy = true;
             Trade.forStrategy(this).ifTrue(iteration >= MIN_ITERATIONS).comment("Ma-4 up-cross of ma-8.").suggest(currData.symbol, Side.Buy, currData.price);
-            warn("Buy - Ma-4 up-cross of ma-8.");
+            info("Buy - Ma-4 up-cross of ma-8.");
          } else if (currData.ma2.compareTo(currData.ma4) < 0 && isBuy) {
             isBuy = false;
             Trade.forStrategy(this).ifTrue(iteration >= MIN_ITERATIONS).comment("Ma-2 down-cross of ma-4.").suggest(currData.symbol, Side.Sell, currData.price);
-            warn("Sell - Ma-2 down-cross of ma-4.");
+            info("Sell - Ma-2 down-cross of ma-4.");
          }
          if (currData.ma4.compareTo(currData.ma8) < 0 && !isSellShort) {
             isSellShort = true;
             Trade.forStrategy(this).ifTrue(iteration >= MIN_ITERATIONS).comment("Ma-4 down-cross of ma-8.").suggest(currData.symbol, Side.SellShort, currData.price);
-            warn("SellShort - Ma-4 down-cross of ma-8.");
+            info("SellShort - Ma-4 down-cross of ma-8.");
          } else if (currData.ma2.compareTo(currData.ma4) > 0 && isSellShort) {
             isSellShort = false;
             Trade.forStrategy(this).ifTrue(iteration >= MIN_ITERATIONS).comment("Ma-2 up-cross of ma-4.").suggest(currData.symbol, Side.Buy, Direction.Short, currData.price);
-            warn("BuyToCover - Ma-2 up-cross of ma-4.");
+            info("BuyToCover - Ma-2 up-cross of ma-4.");
          }
          if (iteration < MIN_ITERATIONS) {
             iteration++;

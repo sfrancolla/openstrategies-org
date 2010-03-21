@@ -7,7 +7,7 @@ examples.  Collaboration highly encouraged.  Contact author for contribution inf
 
 Copyright (c) 2010 OpenStrategies, Steven Francolla (sfrancolla@gmail.com)
 
-Released under LGPLv3.0: 
+Released under the LGPLv3.0 license: 
 http://www.gnu.org/licenses/lgpl-3.0.txt
 
 
@@ -19,5 +19,7 @@ strategy, find and edit RealTimeMovingAverageSuggestions.txt to reflect the true
 the RealTimeMovingAverageSuggestions.java on your machine.  Built using Eclipse, the project files 
 are included.
 
+
+CONTACT:
 
 sfrancolla@gmail.com

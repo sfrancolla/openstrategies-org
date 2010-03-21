@@ -1,3 +1,22 @@
+/**
+ ** Copyright (C) 2010 OpenStrategies
+ ** 
+ ** This library is free software; you can redistribute it and/or modify it under the terms of the 
+ ** GNU Lesser General Public License as published by the Free Software Foundation; either version 
+ ** 2.1 of the License, or (at your option) any later version.
+ **
+ ** This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+ ** without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See 
+ ** the GNU Lesser General Public License for more details.
+ ** 
+ ** You should have received a copy of the GNU Lesser General Public License along with this 
+ ** library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, 
+ ** Boston, MA 02111-1307 USA 
+ ** 
+ ** http://www.gnu.org/licenses/lgpl-3.0.txt
+ **
+ ** @author sfrancolla@gmail.com
+ **/
 package org.openstrategies.metc.strategy.base;
 
 import java.math.*;
@@ -11,8 +30,6 @@ import org.marketcetera.trade.*;
  * access to protected methods.  Use a delegate to relay args.  Also make be verbose about what 
  * event hooks are being called.  And, need to pass ref to the strategy model's id off with
  * suggestions.
- *
- * @author sfrancolla@gmail.com
  */
 public class OpenStrategy extends Strategy {
    
@@ -96,6 +113,16 @@ public class OpenStrategy extends Strategy {
     */
    public void suggestTrade(OpenDelegate delegate) {
       suggestTrade(delegate.<OrderSingle> nextArg(), delegate.<BigDecimal> nextArg(), delegate.<String> nextArg());
+   }
+
+   /**
+    * Send order.
+    *
+     * @param inOrder an <code>OrderSingle</code> value
+     * @return an <code>OrderID</code> value representing the submitted order or null if the order could not be sent
+    */
+   public OrderID sendOrder(OpenDelegate delegate) {
+      return sendOrder(delegate.<OrderSingle> nextArg());
    }
 
    public static class OpenDelegate {
