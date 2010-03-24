@@ -6,7 +6,7 @@ Copyright (c) 2010 OpenStrategies, Steven Francolla (sfrancolla@gmail.com)
 Released under the LGPLv3.0 license: 
 http://www.gnu.org/licenses/lgpl-3.0.txt
 
-Collaboration strongly encouraged.  Simply fork and go on github.com.
+Any level of collaboration strongly encouraged.  Simply fork and go on github.com.
 
 
 DESCRIPTION
