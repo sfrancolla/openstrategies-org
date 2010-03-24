@@ -1,7 +1,9 @@
 OpenStrategies-org
 http://github.com/sfrancolla/openstrategies-org
 
-Copyright (c) 2010 OpenStrategies, Steven Francolla (sfrancolla@gmail.com)
+Copyright (C) 2010, OpenStrategies, Steven Francolla, and individual contributors as indicated
+by the @author tags. See the copyright.txt in the distribution for a full listing of individual 
+contributors.
 
 Released under the LGPLv3.0 license: 
 http://www.gnu.org/licenses/lgpl-3.0.txt

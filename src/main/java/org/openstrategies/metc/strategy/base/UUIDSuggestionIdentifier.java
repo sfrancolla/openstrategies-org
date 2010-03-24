@@ -1,9 +1,14 @@
-/**
- ** Copyright (C) 2010 OpenStrategies
+/***
+ ** OpenStrategies-org
+ ** http://github.com/sfrancolla/openstrategies-org
+ ** 
+ ** Copyright (C) 2010, OpenStrategies, Steven Francolla, and individual contributors as indicated
+ ** by the @authors tag. See the copyright.txt in the distribution for a full listing of individual 
+ ** contributors.
  ** 
  ** This library is free software; you can redistribute it and/or modify it under the terms of the 
  ** GNU Lesser General Public License as published by the Free Software Foundation; either version 
- ** 2.1 of the License, or (at your option) any later version.
+ ** 3 of the License, or (at your option) any later version.
  **
  ** This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
  ** without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See 
@@ -14,8 +19,6 @@
  ** Boston, MA 02111-1307 USA 
  ** 
  ** http://www.gnu.org/licenses/lgpl-3.0.txt
- **
- ** @author sfrancolla@gmail.com
  **/
 package org.openstrategies.metc.strategy.base;
 
