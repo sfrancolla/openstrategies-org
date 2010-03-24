@@ -3,7 +3,7 @@
 #
 #
 # Create the Strategy Module
-createModule;metc:strategy:system;realTimeMovingAverageSuggestions,RealTimeMovingAverageSuggestions,JAVA,C:\OpenStrategies\openstrategies\src\main\java\org\openstrategies\metc\strategy\RealTimeMovingAverageSuggestions.java,,false,metc:remote:receiver
+createModule;metc:strategy:system;realTimeMovingAverageSuggestions,RealTimeMovingAverageSuggestions,JAVA,C:\OpenStrategies\openstrategies-org\src\main\java\org\openstrategies\metc\strategy\RealTimeMovingAverageSuggestions.java,,false,metc:remote:receiver
 
 # Market data module for real-time data
 startModule;metc:mdata:marketcetera:single
