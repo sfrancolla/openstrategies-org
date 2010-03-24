@@ -6,13 +6,14 @@ Copyright (c) 2010 OpenStrategies, Steven Francolla (sfrancolla@gmail.com)
 Released under the LGPLv3.0 license: 
 http://www.gnu.org/licenses/lgpl-3.0.txt
 
+Collaboration strongly encouraged.  Simply fork and go on github.com.
+
 
 DESCRIPTION
 
 This project started as a quick proof-of-concept of a real-time strategy for the open-souce 
 Marketcetera trading platform.  The intention now is to mature the existing and introduce new, 
-progressively more complex proof-of-concept units.  Collaboration highly encouraged.  Simply fork 
-and go on github.
+progressively more complex proof-of-concept units.  
 
 
 INSTALLATION
