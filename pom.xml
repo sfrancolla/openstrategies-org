@@ -1,18 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
-  <properties>
-    <mvn.marketcetera.version>1.6.0</mvn.marketcetera.version>
-<!-- attempt later
-    <org.openstrategies.github.url>1.6.0</org.openstrategies.github.url>
- -->
-  </properties>
 
   <parent>
     <groupId>org.marketcetera</groupId>
     <artifactId>declarations</artifactId>
-    <version>[${mvn.marketcetera.version}]</version>
+    <version>1.6.0</version>
   </parent>
 
   <groupId>org.openstrategies</groupId>
@@ -47,6 +40,10 @@
       <timezone>-5</timezone>
     </developer>
   </developers>
+
+  <properties>
+    <mvn.marketcetera.version>1.6.0</mvn.marketcetera.version>
+  </properties>
 
   <scm>
     <connection>scm:git:git@github.com:sfrancolla/openstrategies-org.git</connection>
@@ -104,6 +101,12 @@
       <groupId>org.marketcetera</groupId>
       <artifactId>strategyagent</artifactId>
       <version>[${mvn.marketcetera.version}]</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.kohera</groupId>
+      <artifactId>metctools</artifactId>
+      <version>1.0-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>

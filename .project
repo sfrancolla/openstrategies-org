@@ -1,6 +1,6 @@
 <projectDescription>
   <name>openstrategies-org</name>
-  <comment>Top-Level Declarations</comment>
+  <comment>Open collaboration of trading strategies executable on the Marketcetera platform.</comment>
   <projects/>
   <buildSpec>
     <buildCommand>

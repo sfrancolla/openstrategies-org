@@ -28,9 +28,8 @@ Prerequisites:
 Set-up:
 - Extract the project
 - cd <project-root>
-- mvn install
-- mvn package
-- mvn eclipse:eclipse
+- mvn install:install-file -Dfile=lib\metctools-1.0-SNAPSHOT.jar -DgroupId=org.kohera -DartifactId=metctools -Dversion=1.0-SNAPSHOT -Dpackaging=jar
+- mvn install package eclipse:eclipse
 - Eclipse | File -> Import -> Existing projects into workspace...
 
 
