@@ -133,6 +133,7 @@
     </dependency>
   </dependencies>
 
+<!-- 
   <repositories>
     <repository>
       <id>central</id>
@@ -156,4 +157,6 @@
       </snapshots>
     </repository>
   </repositories>
+-->
+
 </project>
