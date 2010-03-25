@@ -1,0 +1,133 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.marketcetera</groupId>
+    <artifactId>declarations</artifactId>
+    <version>1.6.0</version>
+  </parent>
+
+  <groupId>org.openstrategies</groupId>
+  <artifactId>openstrategies-org</artifactId>
+  <packaging>jar</packaging>
+
+  <version>1.0-SNAPSHOT</version>
+
+  <name>openstrategies-org</name>
+  <url>http://github.com/sfrancolla/openstrategies-org</url>
+  <description>Open collaboration of trading strategies executable on the Marketcetera platform.</description>
+  <licenses>
+    <license>
+      <name>GNU LESSER GENERAL PUBLIC LICENSE 3.0</name>
+      <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>sfrancolla</id>
+      <name>Steven Francolla</name>
+      <email>sfrancolla@gmail.com</email>
+      <organization>OpenStrategies</organization>
+      <organizationUrl>http://openstrategi.es/</organizationUrl>
+      <roles>
+        <role>founder</role>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git@github.com:sfrancolla/openstrategies-org.git</connection>
+    <url>scm:git:git@github.com:sfrancolla/openstrategies-org.git</url>
+    <developerConnection>scm:git:git@github.com:sfrancolla/openstrategies-org.git</developerConnection>  
+  </scm>
+  
+  <build>  
+    <plugins>  
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.0</version>
+      </plugin>
+    </plugins>  
+  </build>
+<!-- not turned on yet
+  <distributionManagement>
+    <repository>
+      <id>sonatype-nexus-repository</id>
+      <name>Sonatype Nexus repository</name>
+      <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>   
+-->  
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.marketcetera</groupId>
+      <artifactId>core</artifactId>
+      <version>1.6.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.marketcetera</groupId>
+      <artifactId>strategy</artifactId>
+      <version>1.6.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.marketcetera</groupId>
+      <artifactId>strategyagent</artifactId>
+      <version>1.6.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.kohera</groupId>
+      <artifactId>metctools</artifactId>
+      <version>1.1.5</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+  
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>http://repo1.maven.org/maven2</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>java.net</id>
+      <url>http://download.java.net/maven/2</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>marketcetera</id>
+      <url>http://repo.marketcetera.org/maven</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+</project>
