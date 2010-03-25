@@ -63,7 +63,6 @@
       </plugin>
     </plugins>  
   </build>
-<!-- not turned on yet
   <distributionManagement>
     <repository>
       <id>sonatype-nexus-repository</id>
@@ -71,7 +70,6 @@
       <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>   
--->  
 
   <dependencies>
     <dependency>
