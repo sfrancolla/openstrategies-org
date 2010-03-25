@@ -11,7 +11,7 @@
   <artifactId>openstrategies-org</artifactId>
   <packaging>jar</packaging>
 
-  <version>0.5.1-SNAPSHOT</version>
+  <version>0.5.1</version>
 
   <name>openstrategies-org</name>
   <url>http://github.com/sfrancolla/openstrategies-org</url>
