@@ -74,8 +74,8 @@
 <!-- not turned on yet
   <distributionManagement>
     <repository>
-      <id>nexus-releases</id>
-      <name>Nexus Release Repository</name>
+      <id>sonatype-nexus-repository</id>
+      <name>Sonatype Nexus repository</name>
       <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>   
