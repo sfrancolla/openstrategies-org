@@ -1,0 +1,26 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+
+  <id>metcAssembly</id>
+  
+  <files>
+    <file>
+      <source>lib/metc-code-1.6.0.jar</source>
+      <outputDirectory>lib</outputDirectory>
+    </file>
+    <file>
+      <source>lib/metc-util-1.6.0.jar</source>
+      <outputDirectory>lib</outputDirectory>
+    </file>
+    <file>
+      <source>lib/metc-strategy-1.6.0.jar</source>
+      <outputDirectory>lib</outputDirectory>
+    </file>
+    <file>
+      <source>lib/metc-strategyagent-1.6.0.jar</source>
+      <outputDirectory>lib</outputDirectory>
+    </file>
+  </files>
+
+</assembly>

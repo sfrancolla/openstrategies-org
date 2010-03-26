@@ -1,12 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+<!--
   <parent>
     <groupId>org.marketcetera</groupId>
     <artifactId>declarations</artifactId>
     <version>1.6.0</version>
   </parent>
-
+-->
+ 
   <groupId>org.openstrategies</groupId>
   <artifactId>openstrategies-org</artifactId>
   <packaging>jar</packaging>
@@ -61,6 +63,24 @@
         <artifactId>maven-release-plugin</artifactId>
         <version>2.0</version>
       </plugin>
+<!--      <plugin>-->
+<!--        <artifactId>maven-assembly-plugin</artifactId>-->
+<!--        <version>2.2-beta-4</version>-->
+<!--        <configuration>-->
+<!--          <descriptorRefs>-->
+<!--            <descriptorRef>jar-with-dependencies</descriptorRef>-->
+<!--          </descriptorRefs>-->
+<!--        </configuration>-->
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <id>make-assembly</id> this is used for inheritance merges -->
+<!--            <phase>package</phase> append to the packaging phase. -->
+<!--            <goals>-->
+<!--              <goal>single</goal> goals == mojos -->
+<!--            </goals>-->
+<!--          </execution>-->
+<!--        </executions>-->
+<!--      </plugin>-->
     </plugins>
   </build>
   <profiles>
@@ -115,6 +135,12 @@
     </dependency>
     <dependency>
       <groupId>org.marketcetera</groupId>
+      <artifactId>util</artifactId>
+      <version>1.6.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.marketcetera</groupId>
       <artifactId>strategy</artifactId>
       <version>1.6.0</version>
       <scope>compile</scope>
@@ -125,30 +151,17 @@
       <version>1.6.0</version>
       <scope>compile</scope>
     </dependency>
+<!-- 
     <dependency>
       <groupId>org.kohera</groupId>
       <artifactId>metctools</artifactId>
       <version>1.1.5</version>
       <scope>compile</scope>
     </dependency>
+-->
   </dependencies>
 
-<!-- 
   <repositories>
-    <repository>
-      <id>central</id>
-      <url>http://repo1.maven.org/maven2</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>java.net</id>
-      <url>http://download.java.net/maven/2</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
     <repository>
       <id>marketcetera</id>
       <url>http://repo.marketcetera.org/maven</url>
@@ -157,6 +170,5 @@
       </snapshots>
     </repository>
   </repositories>
--->
 
 </project>
