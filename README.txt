@@ -27,17 +27,11 @@ Prerequisites:
 
 Set-up:
 - Extract the project
+- Edit the pom.xml.  Uncomment the <repositories> tag in the project's pom.xml.
 - Do:
     cd <project-root>
     mvn install:install-file -Dfile=lib\jbrukh-metctools-1.1.5.jar -DgroupId=org.kohera -DartifactId=metctools -Dversion=1.1.5 -Dpackaging=jar
-    mvn install:install-file -Dfile=lib\metc-core-1.6.0.jar -DgroupId=org.marketcetera -DartifactId=core -Dversion=1.6.0 -Dpackaging=jar
-    mvn install:install-file -Dfile=lib\metc-strategy-1.6.0.jar -DgroupId=org.marketcetera -DartifactId=strategy -Dversion=1.6.0 -Dpackaging=jar
-    mvn install:install-file -Dfile=lib\metc-strategyagent-1.6.0.jar -DgroupId=org.marketcetera -DartifactId=strategyagent -Dversion=1.6.0 -Dpackaging=jar
     mvn install package 
-
-  * The 3 metc-<module>-1.6.0.jap mvn install commands above could optionally be replaced by 
-    uncommenting the <repositories> tag in the project's pom.xml.  When uncommented, mvn install
-    will automatically install the appropriate metc dependencies.
 
 Finally, for Eclipse:
 - Do:
