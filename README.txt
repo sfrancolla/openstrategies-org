@@ -27,13 +27,23 @@ Prerequisites:
 
 Set-up:
 - Extract the project
-- cd <project-root>
-- mvn install:install-file -Dfile=lib\metctools-1.1.5.jar -DgroupId=org.kohera -DartifactId=metctools -Dversion=1.1.5 -Dpackaging=jar
-- mvn install package 
+- Do:
+    cd <project-root>
+    mvn install:install-file -Dfile=lib\jbrukh-metctools-1.1.5.jar -DgroupId=org.kohera -DartifactId=metctools -Dversion=1.1.5 -Dpackaging=jar
+    mvn install:install-file -Dfile=lib\metc-core-1.6.0.jar -DgroupId=org.marketcetera -DartifactId=core -Dversion=1.6.0 -Dpackaging=jar
+    mvn install:install-file -Dfile=lib\metc-strategy-1.6.0.jar -DgroupId=org.marketcetera -DartifactId=strategy -Dversion=1.6.0 -Dpackaging=jar
+    mvn install:install-file -Dfile=lib\metc-strategyagent-1.6.0.jar -DgroupId=org.marketcetera -DartifactId=strategyagent -Dversion=1.6.0 -Dpackaging=jar
+    mvn install package 
 
-Then, optionally, for Eclipse:
-- mvn eclipse:eclipse
-- Eclipse | File -> Import -> Existing projects into workspace...
+  * The 3 metc-<module>-1.6.0.jap mvn install commands above could optionally be replaced by 
+    uncommenting the <repositories> tag in the project's pom.xml.  When uncommented, mvn install
+    will automatically install the appropriate metc dependencies.
+
+Finally, for Eclipse:
+- Do:
+    mvn eclipse:eclipse
+- Open Eclipse
+- File -> Import -> Existing projects into workspace...
 
 
 RUN A STRATEGY
