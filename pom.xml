@@ -156,6 +156,7 @@
     -->
   </dependencies>
 
+<!--
   <repositories>
     <repository>
       <id>marketcetera</id>
@@ -165,5 +166,6 @@
       </snapshots>
     </repository>
   </repositories>
+-->
 
 </project>
