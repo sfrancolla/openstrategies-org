@@ -23,10 +23,10 @@
 package org.openstrategies.metc.strategy.util;
 
 /**
- * Need to specify side direction.  
+ * Side direction descriptor.  
  */
 public enum Direction {
 
-   Short(), Long(),
+   Short(),Long();
 
 }

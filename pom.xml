@@ -143,6 +143,12 @@
     </dependency>
     <dependency>
       <groupId>org.marketcetera</groupId>
+      <artifactId>strategy</artifactId>
+      <version>1.6.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.marketcetera</groupId>
       <artifactId>strategyagent</artifactId>
       <version>1.6.0</version>
       <scope>compile</scope>
