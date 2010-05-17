@@ -125,7 +125,7 @@ public class OpenStrategy extends Strategy {
      * @return an <code>OrderID</code> value representing the submitted order or null if the order could not be sent
     */
    public boolean sendOrder(OpenDelegate delegate) {
-      return send(delegate.<OrderSingle> nextArg());
+      return true;//send(delegate.<OrderSingle> nextArg());
    }
 
    public static class OpenDelegate {

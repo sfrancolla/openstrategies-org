@@ -24,11 +24,11 @@ package org.openstrategies.metc.strategy;
 
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.*;
-import org.kohera.metctools.*;
-import org.kohera.metctools.delegate.*;
-import org.kohera.metctools.util.*;
-import org.marketcetera.client.*;
+//import org.apache.log4j.*;
+//import org.kohera.metctools.*;
+//import org.kohera.metctools.delegate.*;
+//import org.kohera.metctools.util.*;
+//import org.marketcetera.client.*;
 import org.marketcetera.marketdata.*;
 import org.marketcetera.trade.*;
 import org.openstrategies.metc.strategy.util.*;
@@ -47,91 +47,91 @@ import org.openstrategies.metc.strategy.util.*;
  *
  * @author sfrancolla@gmail.com
  */
-public class RealTimeMovingAverages extends DelegatorStrategy {
+public class RealTimeMovingAverages /*extends DelegatorStrategy*/ {
 
-   public static final Logger logger = Logger.getLogger(RealTimeMovingAverages.class);
-
-   public static final String[] SYMBOLS = {"zzz"}; //only 1 symbol works in this proof-of-concept.
-   public static final String[] CEP_QUERY = EPL.MA_2_4_8;
-   public static final int MIN_ITERATIONS = 8;
-
-   private static final BigDecimal POCCONFIDENCE = new BigDecimal(0);
-   private static final String POCIDENTIFIER = "<suggestion-idetifier>";
-
-   public RealTimeMovingAverages() throws ClientInitException {
-      requestProcessedMarketData(MarketDataRequest.newRequest().withSymbols(SYMBOLS).fromProvider(EPL.MARKET_DATA_PROVIDER).withContent(MarketDataRequest.Content.TOP_OF_BOOK), CEP_QUERY, EPL.CEP_PROVIDER);
-      addDelegate(new RealTimeMovingAveragesDelegate());
-   }
-
-   private static class RealTimeMovingAveragesDelegate implements OtherDelegate {
-
-      private int iteration = 0;
-
-      private boolean isBuy = false;
-      private boolean isSellShort = false;
-
-      @Override
-      public void onOther(DelegatorStrategy sender, Object message) {
-         if (message instanceof Map) {
-            Data currData = new Data((Map)message);
-            if (currData.ma4.compareTo(currData.ma8) > 0 && !isBuy) {
-               isBuy = true;
-               String comment = "Buy - Ma-4 up-cross of ma-8.";
-               if (iteration >= MIN_ITERATIONS) {
-                  OrderSingle order = new OrderBuilder().withSymbol(currData.symbol).withSide(Side.Buy).withPrice(new BigDecimal(currData.price)).build();
-                  sender.getFramework().suggestTrade(order, POCCONFIDENCE, POCIDENTIFIER);
-                  logger.info(comment);
-               }
-            } else if (currData.ma2.compareTo(currData.ma4) < 0 && isBuy) {
-               isBuy = false;
-               String comment = "Sell - Ma-2 down-cross of ma-4.";
-               if (iteration >= MIN_ITERATIONS) {
-                  OrderSingle order = new OrderBuilder().withSymbol(currData.symbol).withSide(Side.Sell).withPrice(new BigDecimal(currData.price)).build();
-                  sender.getFramework().suggestTrade(order, POCCONFIDENCE, POCIDENTIFIER);
-                  logger.info(comment);
-               }
-            }
-            if (currData.ma4.compareTo(currData.ma8) < 0 && !isSellShort) {
-               isSellShort = true;
-               String comment = "SellShort - Ma-4 down-cross of ma-8.";
-               if (iteration >= MIN_ITERATIONS) {
-                  OrderSingle order = new OrderBuilder().withSymbol(currData.symbol).withSide(Side.SellShort).withPrice(new BigDecimal(currData.price)).build();
-                  sender.getFramework().suggestTrade(order, POCCONFIDENCE, POCIDENTIFIER);
-                  logger.info(comment);
-               }
-            } else if (currData.ma2.compareTo(currData.ma4) > 0 && isSellShort) {
-               isSellShort = false;
-               String comment = "BuyToCover - Ma-2 up-cross of ma-4.";
-               if (iteration >= MIN_ITERATIONS) {
-                  OrderSingle order = new OrderBuilder().withSymbol(currData.symbol).withSide(Side.Buy).withPrice(new BigDecimal(currData.price)).build();
-                  sender.getFramework().suggestTrade(order, POCCONFIDENCE, POCIDENTIFIER);
-                  logger.info(comment);
-               }
-            }
-            if (iteration < MIN_ITERATIONS) {
-               iteration++;
-            }
-         }
-      }
-
-      /**
-       * Delegate to translate the map.
-       */
-      private static class Data {
-         String symbol;
-         Double price;
-         Double ma2;
-         Double ma4;
-         Double ma8;
-
-         public Data(Map map) {
-            symbol = (String)map.get("symbol");
-            price = (Double)map.get("price");
-            ma2 = (Double)map.get("ma2");
-            ma4 = (Double)map.get("ma4");
-            ma8 = (Double)map.get("ma8");
-         }
-      }
-   }
+//   public static final Logger logger = Logger.getLogger(RealTimeMovingAverages.class);
+//
+//   public static final String[] SYMBOLS = {"zzz"}; //only 1 symbol works in this proof-of-concept.
+//   public static final String[] CEP_QUERY = EPL.MA_2_4_8;
+//   public static final int MIN_ITERATIONS = 8;
+//
+//   private static final BigDecimal POCCONFIDENCE = new BigDecimal(0);
+//   private static final String POCIDENTIFIER = "<suggestion-idetifier>";
+//
+//   public RealTimeMovingAverages() throws ClientInitException {
+//      requestProcessedMarketData(MarketDataRequest.newRequest().withSymbols(SYMBOLS).fromProvider(EPL.MARKET_DATA_PROVIDER).withContent(MarketDataRequest.Content.TOP_OF_BOOK), CEP_QUERY, EPL.CEP_PROVIDER);
+//      addDelegate(new RealTimeMovingAveragesDelegate());
+//   }
+//
+//   private static class RealTimeMovingAveragesDelegate implements OtherDelegate {
+//
+//      private int iteration = 0;
+//
+//      private boolean isBuy = false;
+//      private boolean isSellShort = false;
+//
+//      @Override
+//      public void onOther(DelegatorStrategy sender, Object message) {
+//         if (message instanceof Map) {
+//            Data currData = new Data((Map)message);
+//            if (currData.ma4.compareTo(currData.ma8) > 0 && !isBuy) {
+//               isBuy = true;
+//               String comment = "Buy - Ma-4 up-cross of ma-8.";
+//               if (iteration >= MIN_ITERATIONS) {
+//                  OrderSingle order = new OrderBuilder().withSymbol(currData.symbol).withSide(Side.Buy).withPrice(new BigDecimal(currData.price)).build();
+//                  sender.getFramework().suggestTrade(order, POCCONFIDENCE, POCIDENTIFIER);
+//                  logger.info(comment);
+//               }
+//            } else if (currData.ma2.compareTo(currData.ma4) < 0 && isBuy) {
+//               isBuy = false;
+//               String comment = "Sell - Ma-2 down-cross of ma-4.";
+//               if (iteration >= MIN_ITERATIONS) {
+//                  OrderSingle order = new OrderBuilder().withSymbol(currData.symbol).withSide(Side.Sell).withPrice(new BigDecimal(currData.price)).build();
+//                  sender.getFramework().suggestTrade(order, POCCONFIDENCE, POCIDENTIFIER);
+//                  logger.info(comment);
+//               }
+//            }
+//            if (currData.ma4.compareTo(currData.ma8) < 0 && !isSellShort) {
+//               isSellShort = true;
+//               String comment = "SellShort - Ma-4 down-cross of ma-8.";
+//               if (iteration >= MIN_ITERATIONS) {
+//                  OrderSingle order = new OrderBuilder().withSymbol(currData.symbol).withSide(Side.SellShort).withPrice(new BigDecimal(currData.price)).build();
+//                  sender.getFramework().suggestTrade(order, POCCONFIDENCE, POCIDENTIFIER);
+//                  logger.info(comment);
+//               }
+//            } else if (currData.ma2.compareTo(currData.ma4) > 0 && isSellShort) {
+//               isSellShort = false;
+//               String comment = "BuyToCover - Ma-2 up-cross of ma-4.";
+//               if (iteration >= MIN_ITERATIONS) {
+//                  OrderSingle order = new OrderBuilder().withSymbol(currData.symbol).withSide(Side.Buy).withPrice(new BigDecimal(currData.price)).build();
+//                  sender.getFramework().suggestTrade(order, POCCONFIDENCE, POCIDENTIFIER);
+//                  logger.info(comment);
+//               }
+//            }
+//            if (iteration < MIN_ITERATIONS) {
+//               iteration++;
+//            }
+//         }
+//      }
+//
+//      /**
+//       * Delegate to translate the map.
+//       */
+//      private static class Data {
+//         String symbol;
+//         Double price;
+//         Double ma2;
+//         Double ma4;
+//         Double ma8;
+//
+//         public Data(Map map) {
+//            symbol = (String)map.get("symbol");
+//            price = (Double)map.get("price");
+//            ma2 = (Double)map.get("ma2");
+//            ma4 = (Double)map.get("ma4");
+//            ma8 = (Double)map.get("ma8");
+//         }
+//      }
+//   }
 
 }
